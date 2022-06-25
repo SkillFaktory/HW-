@@ -1,0 +1,52 @@
+1) Посмотреть где я – 
+ pwd
+2) Создать папку  
+mkdir newFolder
+3) Зайти в папку 
+cd newFolder
+4) Создать 3 папки  
+ sudo mkdir a b c
+5) Зайти в любоую папку  
+cd /var/log
+6) Создать 5 файлов  (3 txt, 2 json)
+sudo touch 1.txt 2.txt 3.txt 4.json 5.json
+7) Создать 3 папки 
+sudo mkdir 1 2 3
+8. Вывести список содержимого папки 
+ ls
+9) + Открыть любой txt файл 
+ sudo nano 2.txt
+	10) + написать туда что-нибудь, любой текст. 
+	11) + сохранить и выйти.
+   12) Выйти из папки на уровень выше  
+cd ..
+—13) переместить любые 2 файла, которые вы создали, в любую другую папку. 
+sudo mv /home/irina/newFolder/3.txt /home/irina/newFolder/5.json newFolder/c
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+sudo cp /home/irina/newFolder/1.txt /home/irina/newFolder/c/5.json newFolder/b
+15) Найти файл по имени
+find /home/irina/ -name 3.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+ls | grep 'My Documents'
+17) вывести несколько первых строк из текстового файла
+head -n 3 newFolder/c/3.txt
+18) вывести несколько последних строк из текстового файла
+tail -n 3 newFolder/c/3.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+
+20) вывести дату и время
+date
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/get_method?name=irina&age=36
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+cd newFolder
+sudo mkdir sa sb sc
+cd sa
+sudo touch s1.txt s2.txt s3.txt s4.json s5.json
+sudo mkdir s1 s2 s3
+ls
+sudo mv /home/irina/newFolder/sa/s3.txt /home/irina/newFolder/sa/s5.json /home/irina/newFolder/sb
